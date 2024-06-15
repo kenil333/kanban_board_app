@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "712664121928",
+    "project_id": "kanban-db993",
+    "storage_bucket": "kanban-db993.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712664121928:android:412a501b008daa8ffb0e7d",
+        "android_client_info": {
+          "package_name": "com.kanbanboard.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcbJhQDGKSBB5l_TukBgxtRYWx_1-fkMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
