@@ -1,19 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:get/get.dart';
 
 import '../../../../utils/app_color.dart';
 import '../../../../utils/app_image.dart';
 import '../../../../utils/app_size.dart';
 import '../../../../utils/app_style.dart';
 import '../../../../utils/app_text.dart';
+import '../../../controllers/splash/splash_controller.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   static const String id = "/";
   const SplashScreen({super.key});
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  final SplashController controller = Get.put(SplashController());
+
+  @override
+  void initState() {
+    controller.initializeResources();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    Get.delete<SplashController>();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     AppSize.setupData(MediaQuery.of(context));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,

@@ -1,0 +1,11 @@
+{
+    "@@locale": "en",
+    "welcomeToOur": "Welcome to our Kanban app!",
+    "welcomeToOurNote": "Our app helps you manage your projects with ease. Use our Kanban board to stay on top of your tasks and visualize your progress.",
+    "addBoard": "Add Board",
+    "addBoardNote": "Create a board for your project. Add a title and description for your project.",
+    "dragDrope": "Drag and Drop",
+    "dragDropeNote": "Drag and drop cards to move them between lists. Move cards from \"To Do\" to \"In Progress\" when you are ready to start working on them.",
+    "back": "Back",
+    "next": "Next"
+}

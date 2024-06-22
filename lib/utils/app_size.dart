@@ -11,13 +11,6 @@ class AppSize {
   static double topPadding = 0;
   static double useWidth = 0;
 
-  // All fontSizes
-  static double fontSize16 = 0;
-
-  static void setupFontSizes() {
-    fontSize16 = getSize(16);
-  }
-
   /// Sets up data based on the provided [MediaQueryData].
   ///
   /// This method initializes various properties such as screen size,
@@ -36,7 +29,6 @@ class AppSize {
     } else {
       useWidth = mobileWidth;
     }
-    setupFontSizes();
   }
 
   /// Converts a size from pixels to logical pixels.
@@ -55,5 +47,33 @@ class AppSize {
     return size.width * pxSize / useWidth;
   }
 
-  static double get size16 => fontSize16;
+  // all Sizes
+
+  static double _size14 = 0;
+  static double get size14 => _size14 != 0 ? _size14 : setup14();
+  static double setup14() {
+    _size14 = getSize(14);
+    return _size14;
+  }
+
+  static double _size16 = 0;
+  static double get size16 => _size16 != 0 ? _size16 : setup16();
+  static double setup16() {
+    _size16 = getSize(16);
+    return _size16;
+  }
+
+  static double _size20 = 0;
+  static double get size20 => _size20 != 0 ? _size20 : setup20();
+  static double setup20() {
+    _size20 = getSize(20);
+    return _size20;
+  }
+
+  static double _size24 = 0;
+  static double get size24 => _size24 != 0 ? _size24 : setup24();
+  static double setup24() {
+    _size24 = getSize(24);
+    return _size24;
+  }
 }
