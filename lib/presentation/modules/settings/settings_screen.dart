@@ -96,7 +96,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 116),
                   Text(
                     context.l10n.appTheme,
                     style: AppStyle.font14500,
@@ -115,6 +115,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           (e) => GestureDetector(
                             onTap: () {
                               controller.onChangeTheme(e);
+                              onHideLanguageDropDown();
                             },
                             child: Container(
                               width: AppSize.size.width * 0.15,

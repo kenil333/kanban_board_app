@@ -80,6 +80,12 @@ class TaskDetailController extends GetxController {
   }
 
   @override
+  void onInit() {
+    getComments();
+    super.onInit();
+  }
+
+  @override
   void onClose() {
     screenScroll.dispose();
     commentTc.dispose();
