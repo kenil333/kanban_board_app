@@ -48,6 +48,12 @@ flutter run
 ## App Walkthrough
 
 
+https://github.com/kenil333/kanban_board_app/assets/90637465/1ab4f2b8-21a9-410f-ab6e-f430853eb6c7
+
+
+
+
+
 [firebase_core]: https://pub.dev/packages/firebase_core
 [firebase_messaging]: https://pub.dev/packages/firebase_messaging
 [flutter_local_notifications]: https://pub.dev/packages/flutter_local_notifications
