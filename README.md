@@ -43,6 +43,11 @@ flutter pub get
 flutter run
 ```
 
+
+
+## App Walkthrough
+
+
 [firebase_core]: https://pub.dev/packages/firebase_core
 [firebase_messaging]: https://pub.dev/packages/firebase_messaging
 [flutter_local_notifications]: https://pub.dev/packages/flutter_local_notifications
