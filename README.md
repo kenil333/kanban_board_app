@@ -44,6 +44,17 @@ flutter run
 ```
 
 
+## Build Configurations
+
+To buil the app use the following command:
+```
+flutter build apk
+```
+
+### Build Link
+Please find the apk link below:
+[apk_link]
+
 
 ## App Walkthrough
 
@@ -66,3 +77,4 @@ https://github.com/kenil333/kanban_board_app/assets/90637465/1ab4f2b8-21a9-410f-
 [flutter_staggered_grid_view]: https://pub.dev/packages/flutter_staggered_grid_view
 [appflowy_board]: https://pub.dev/packages/appflowy_board
 [time_picker_spinner_pop_up]: https://pub.dev/packages/time_picker_spinner_pop_up
+[apk_link]: https://drive.google.com/file/d/1DHkdMVzPrcFhkfevj9kYQ0pY6j_aGFPz/view?usp=sharing
