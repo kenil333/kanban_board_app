@@ -49,6 +49,34 @@ class AppSize {
 
   // all Sizes
 
+  static double _size4 = 0;
+  static double get size4 => _size4 != 0 ? _size4 : setup4();
+  static double setup4() {
+    _size4 = getSize(4);
+    return _size4;
+  }
+
+  static double _size8 = 0;
+  static double get size8 => _size8 != 0 ? _size8 : setup8();
+  static double setup8() {
+    _size8 = getSize(8);
+    return _size8;
+  }
+
+  static double _size10 = 0;
+  static double get size10 => _size10 != 0 ? _size10 : setup10();
+  static double setup10() {
+    _size10 = getSize(10);
+    return _size10;
+  }
+
+  static double _size12 = 0;
+  static double get size12 => _size12 != 0 ? _size12 : setup12();
+  static double setup12() {
+    _size12 = getSize(12);
+    return _size12;
+  }
+
   static double _size14 = 0;
   static double get size14 => _size14 != 0 ? _size14 : setup14();
   static double setup14() {
@@ -75,5 +103,26 @@ class AppSize {
   static double setup24() {
     _size24 = getSize(24);
     return _size24;
+  }
+
+  static double _size32 = 0;
+  static double get size32 => _size32 != 0 ? _size32 : setup32();
+  static double setup32() {
+    _size32 = getSize(32);
+    return _size32;
+  }
+
+  static double _size48 = 0;
+  static double get size48 => _size48 != 0 ? _size48 : setup48();
+  static double setup48() {
+    _size48 = getSize(48);
+    return _size48;
+  }
+
+  static double _size260 = 0;
+  static double get size260 => _size260 != 0 ? _size260 : setup260();
+  static double setup260() {
+    _size260 = getSize(260);
+    return _size260;
   }
 }

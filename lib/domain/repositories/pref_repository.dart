@@ -21,4 +21,40 @@ class PrefRepository {
       return false;
     }
   }
+
+  Future<String?> getAppLocal() async {
+    try {
+      return await PrefHelper.getString(PrefConfig.appLocal);
+    } catch (e) {
+      debugPrint("=======>   PREF REPO CATCH ERROR:=> $e");
+      return null;
+    }
+  }
+
+  Future<bool> setApplocal(String value) async {
+    try {
+      return await PrefHelper.setString(PrefConfig.appLocal, value);
+    } catch (e) {
+      debugPrint("=======>   PREF REPO CATCH ERROR:=> $e");
+      return false;
+    }
+  }
+
+  Future<int?> getAppTheme() async {
+    try {
+      return await PrefHelper.getInt(PrefConfig.appTheme);
+    } catch (e) {
+      debugPrint("=======>   PREF REPO CATCH ERROR:=> $e");
+      return null;
+    }
+  }
+
+  Future<bool> setAppTheme(int value) async {
+    try {
+      return await PrefHelper.setInt(PrefConfig.appLocal, value);
+    } catch (e) {
+      debugPrint("=======>   PREF REPO CATCH ERROR:=> $e");
+      return false;
+    }
+  }
 }

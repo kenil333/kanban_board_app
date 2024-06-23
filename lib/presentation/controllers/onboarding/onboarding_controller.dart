@@ -31,4 +31,11 @@ class OnboardingController extends GetxController {
     await prefRepo.setOnBoardingCompleted(true);
     Get.offAllNamed(HomeScreen.id);
   }
+
+  @override
+  void onClose() {
+    pageController.dispose();
+    currentPage.close();
+    super.onClose();
+  }
 }

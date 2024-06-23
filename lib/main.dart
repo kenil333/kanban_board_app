@@ -5,14 +5,16 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'domain/repositories/firebase_repository.dart';
+import 'presentation/controllers/settings/settings_controller.dart';
+import 'presentation/modules/restart/restart_screen.dart';
 import 'presentation/modules/splash/screens/splash_screen.dart';
 import 'utils/app_color.dart';
 import 'utils/app_data.dart';
 import 'utils/app_router.dart';
+import 'utils/app_style.dart';
 import 'utils/app_text.dart';
 
 void main() async {
@@ -23,6 +25,7 @@ void main() async {
   } else {
     AppData.iOS = false;
   }
+  Get.put(SettingsController());
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
   );
@@ -30,7 +33,7 @@ void main() async {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]);
-  runApp(const MyApp());
+  runApp(const RestartScreen(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -38,16 +41,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final SettingsController settingsController = Get.find();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppText.kanbanBoard,
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      locale: settingsController.locale.value,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -55,23 +55,10 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: AppText.poppins,
         scaffoldBackgroundColor: AppColor.white,
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: AppColor.primary,
-          foregroundColor: AppColor.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100),
-          ),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(100),
-            ),
-            backgroundColor: AppColor.primary,
-            foregroundColor: AppColor.white,
-            shadowColor: AppColor.textPrimary.withOpacity(0.25),
-          ),
-        ),
+        floatingActionButtonTheme: AppStyle.floatingActionButtonTheme,
+        elevatedButtonTheme: AppStyle.elevatedButtonTheme,
+        appBarTheme: AppStyle.appBarTheme,
+        inputDecorationTheme: AppStyle.inputDecorationTheme,
       ),
       initialRoute: SplashScreen.id,
       getPages: AppRouter.getRoutes(),
